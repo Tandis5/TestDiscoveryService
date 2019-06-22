@@ -23,11 +23,7 @@ namespace TestDiscoveryService
                 .UseStartup<Startup>()
                 .ConfigureAppConfiguration((hostingContext, config) =>
                 {
-                    var env = hostingContext.HostingEnvironment;
-
                     config
-                        //.SetBasePath(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location))
-                        //.AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true)
                         .AddJsonFile($"appsettings.json", optional: false, reloadOnChange: true)
                         .AddEnvironmentVariables();
 
